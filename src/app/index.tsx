@@ -1,5 +1,12 @@
 import { Ionicons } from "@expo/vector-icons";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -38,45 +45,60 @@ export default function Index() {
           {/* Category 1 */}
           <View style={styles.categoryRow}>
             <View style={styles.categoryItem}>
-              <Ionicons name="fast-food-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="fast-food-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>McDonald's</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Ionicons name="pricetag-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="ice-cream-outline" size={34} color="#ff8030" />
+              </View>
+              <Text style={styles.categoryText}>Desserts</Text>
+            </View>
+            <View style={styles.categoryItem}>
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="pricetag-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>Offers</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Ionicons name="basket-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="basket-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>Grocery</Text>
-            </View>
-
-            <View style={styles.categoryItem}>
-              <Ionicons name="wine-outline" size={34} color="#ff8030" />
-              <Text style={styles.categoryText}>Alcohol</Text>
             </View>
           </View>
 
           {/* Category 2 */}
           <View style={styles.categoryRow}>
             <View style={styles.categoryItem}>
-              <Ionicons name="restaurant-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="restaurant-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>New</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Ionicons name="bag-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="bag-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>Only on Skip</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>Fast Food</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Ionicons name="fast-food" size={34} color="#ff8030" />
+              <View style={styles.categoryIconContainer}>
+                <Ionicons name="fast-food" size={34} color="#ff8030" />
+              </View>
               <Text style={styles.categoryText}>Burgers</Text>
             </View>
           </View>
@@ -102,6 +124,18 @@ export default function Index() {
           <Text style={styles.restaurantInfo}>
             Sandwiches🥪 • Fast Food • 15-35 min
           </Text>
+          {/*Alert Button*/}
+          <Pressable
+            style={styles.alertButton}
+            onPress={() =>
+              Alert.alert(
+                "Special Offer!",
+                "Get $30 off your next order of $70 or more with code SPRING30. Don't miss out on this limited-time deal!",
+              )
+            }
+          >
+            <Text style={styles.alertButtonText}>View Special Offer</Text>
+          </Pressable>
         </ScrollView>
       </View>
       <View style={styles.footer}>
@@ -224,6 +258,15 @@ const styles = StyleSheet.create({
     width: "23%",
     alignItems: "center",
   },
+  categoryIconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 15,
+    backgroundColor: "#222",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 8,
+  },
   categoryText: {
     color: "#fff",
     fontSize: 12,
@@ -292,5 +335,17 @@ const styles = StyleSheet.create({
     color: "#aaa",
     fontSize: 14,
     marginBottom: 40,
+  },
+  alertButton: {
+    backgroundColor: "#ff8030",
+    padding: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  alertButtonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
