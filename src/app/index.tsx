@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -25,7 +25,39 @@ export default function Index() {
 
       {/* Body */}
       <View style={styles.content}>
-        <Text>Body Content</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/*Promo Banner*/}
+          <View style={styles.banner}>
+            <Text style={styles.bannerSmallText}>Sponsored</Text>
+            <Text style={styles.bannerTitle}>fire up!</Text>
+            <Text style={styles.bannerDiscount}>$30 off!</Text>
+            <Text style={styles.bannerBody}>On $70+ orders with code!</Text>
+            <Text style={styles.bannerCode}>SPRING30</Text>
+          </View>
+
+          {/* Categories */}
+          <View style={styles.categoryRow}>
+            <View style={styles.categoryItem}>
+              <Ionicons name="fast-food-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>McDonald's</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="pricetag-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Offers</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="basket-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Grocery</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="wine-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Alcohol</Text>
+            </View>
+          </View>
+        </ScrollView>
       </View>
       <View style={styles.footer}>
         <Ionicons name="home" size={30} color="white" />
@@ -104,5 +136,53 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
+  },
+
+  banner: {
+    backgroundColor: "#e9fbff",
+    borderRadius: 16,
+    padding: 10,
+    height: 185,
+    marginBottom: 20,
+  },
+  bannerSmallText: {
+    color: "#222",
+    fontSize: 12,
+  },
+  bannerTitle: {
+    color: "#1f5bd8",
+    fontSize: 34,
+    fontWeight: "bold",
+    fontStyle: "italic",
+  },
+  bannerDiscount: {
+    color: "#1f5bd8",
+    fontSize: 34,
+    fontWeight: "bold",
+  },
+  bannerBody: {
+    color: "#222",
+    fontSize: 15,
+    marginTop: 8,
+  },
+  bannerCode: {
+    color: "#222",
+    fontSize: 17,
+    fontWeight: "bold",
+  },
+  categoryRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 24,
+  },
+  categoryItem: {
+    width: "23%",
+    alignItems: "center",
+  },
+  categoryText: {
+    color: "#fff",
+    fontSize: 14,
+    textAlign: "center",
+    marginTop: 8,
   },
 });
