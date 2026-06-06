@@ -35,7 +35,7 @@ export default function Index() {
             <Text style={styles.bannerCode}>SPRING30</Text>
           </View>
 
-          {/* Categories */}
+          {/* Category 1 */}
           <View style={styles.categoryRow}>
             <View style={styles.categoryItem}>
               <Ionicons name="fast-food-outline" size={34} color="#ff8030" />
@@ -57,6 +57,51 @@ export default function Index() {
               <Text style={styles.categoryText}>Alcohol</Text>
             </View>
           </View>
+
+          {/* Category 2 */}
+          <View style={styles.categoryRow}>
+            <View style={styles.categoryItem}>
+              <Ionicons name="restaurant-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>New</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="bag-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Only on Skip</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Fast Food</Text>
+            </View>
+
+            <View style={styles.categoryItem}>
+              <Ionicons name="fast-food" size={34} color="#ff8030" />
+              <Text style={styles.categoryText}>Burgers</Text>
+            </View>
+          </View>
+          {/* Restaurant Cards */}
+          <View style={styles.restaurantCard}>
+            <View style={styles.discountBadge}>
+              <Text style={styles.discountText}>$3 off orders $30+</Text>
+            </View>
+
+            <View style={styles.heartButton}>
+              <Ionicons name="heart-outline" size={26} color="white" />
+            </View>
+
+            <Text style={styles.restaurantImageText}>SUBWAY SANDWICHES</Text>
+
+            <View style={styles.restaurantLogo}>
+              <Text style={styles.logoText}>SUBWAY</Text>
+            </View>
+          </View>
+
+          {/*Restaurant Details*/}
+          <Text style={styles.restaurantName}>Subway</Text>
+          <Text style={styles.restaurantInfo}>
+            Sandwiches🥪 • Fast Food • 15-35 min
+          </Text>
         </ScrollView>
       </View>
       <View style={styles.footer}>
@@ -181,8 +226,71 @@ const styles = StyleSheet.create({
   },
   categoryText: {
     color: "#fff",
-    fontSize: 14,
+    fontSize: 12,
     textAlign: "center",
     marginTop: 8,
+  },
+  restaurantCard: {
+    height: 170,
+    backgroundColor: "#eaf7d8",
+    borderRadius: 16,
+    marginTop: 15,
+    marginBottom: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+  },
+  discountBadge: {
+    position: "absolute",
+    top: 12,
+    left: 12,
+    backgroundColor: "#2f2a16",
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+  },
+  discountText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 12,
+  },
+  heartButton: {
+    position: "absolute",
+    top: 12,
+    right: 12,
+    backgroundColor: "#111",
+    borderRadius: 24,
+    padding: 8,
+  },
+  restaurantImageText: {
+    color: "#8b4f1f",
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  restaurantLogo: {
+    position: "absolute",
+    bottom: 12,
+    left: 14,
+    width: 75,
+    height: 65,
+    borderRadius: 12,
+    backgroundColor: "#159447",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  logoText: {
+    color: "#ffd34d",
+    fontWeight: "bold",
+  },
+  restaurantName: {
+    color: "#fff",
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+  restaurantInfo: {
+    color: "#aaa",
+    fontSize: 14,
+    marginBottom: 40,
   },
 });
