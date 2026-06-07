@@ -42,8 +42,13 @@ export default function Index() {
             <Text style={styles.bannerCode}>SPRING30</Text>
           </View>
 
-          {/* Category 1 */}
-          <View style={styles.categoryRow}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.categoryRow}
+          >
+            {/* Category 1 */}
+
             <View style={styles.categoryItem}>
               <View style={styles.categoryIconContainer}>
                 <Ionicons name="fast-food-outline" size={34} color="#ff8030" />
@@ -66,42 +71,103 @@ export default function Index() {
 
             <View style={styles.categoryItem}>
               <View style={styles.categoryIconContainer}>
-                <Ionicons name="basket-outline" size={34} color="#ff8030" />
+                <Ionicons name="nutrition-outline" size={34} color="#ff8030" />
               </View>
               <Text style={styles.categoryText}>Grocery</Text>
             </View>
-          </View>
 
-          {/* Category 2 */}
-          <View style={styles.categoryRow}>
             <View style={styles.categoryItem}>
               <View style={styles.categoryIconContainer}>
-                <Ionicons name="restaurant-outline" size={34} color="#ff8030" />
+                <Ionicons name="cart-outline" size={34} color="#ff8030" />
               </View>
-              <Text style={styles.categoryText}>New</Text>
+              <Text style={styles.categoryText}>Retail</Text>
             </View>
 
             <View style={styles.categoryItem}>
               <View style={styles.categoryIconContainer}>
-                <Ionicons name="bag-outline" size={34} color="#ff8030" />
+                <Ionicons name="basket-outline" size={34} color="#ff8030" />
               </View>
-              <Text style={styles.categoryText}>Only on Skip</Text>
+              <Text style={styles.categoryText}>Convenience</Text>
             </View>
 
             <View style={styles.categoryItem}>
               <View style={styles.categoryIconContainer}>
-                <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+                <Ionicons name="medkit-outline" size={34} color="#ff8030" />
               </View>
-              <Text style={styles.categoryText}>Fast Food</Text>
+              <Text style={styles.categoryText}>Pharmacy</Text>
             </View>
+          </ScrollView>
 
-            <View style={styles.categoryItem}>
-              <View style={styles.categoryIconContainer}>
-                <Ionicons name="fast-food" size={34} color="#ff8030" />
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.categoryRow}
+          >
+            {/* Category 2 */}
+            <View style={styles.categoryRow}>
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons
+                    name="restaurant-outline"
+                    size={34}
+                    color="#ff8030"
+                  />
+                </View>
+                <Text style={styles.categoryText}>New</Text>
               </View>
-              <Text style={styles.categoryText}>Burgers</Text>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons name="bag-outline" size={34} color="#ff8030" />
+                </View>
+                <Text style={styles.categoryText}>Only on Skip</Text>
+              </View>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+                </View>
+                <Text style={styles.categoryText}>Fast Food</Text>
+              </View>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons
+                    name="fast-food-outline"
+                    size={34}
+                    color="#ff8030"
+                  />
+                </View>
+                <Text style={styles.categoryText}>Burgers</Text>
+              </View>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons name="pizza-outline" size={34} color="#ff8030" />
+                </View>
+                <Text style={styles.categoryText}>Pizza</Text>
+              </View>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons name="fish-outline" size={34} color="#ff8030" />
+                </View>
+                <Text style={styles.categoryText}>Sushi</Text>
+              </View>
+
+              <View style={styles.categoryItem}>
+                <View style={styles.categoryIconContainer}>
+                  <Ionicons
+                    name="restaurant-outline"
+                    size={34}
+                    color="#ff8030"
+                  />
+                </View>
+                <Text style={styles.categoryText}>Pasta</Text>
+              </View>
             </View>
-          </View>
+          </ScrollView>
+
           {/* Restaurant Cards */}
           <View style={styles.restaurantCard}>
             <View style={styles.discountBadge}>
@@ -139,7 +205,7 @@ export default function Index() {
         </ScrollView>
       </View>
       <View style={styles.footer}>
-        <Ionicons name="home" size={30} color="white" />
+        <Ionicons name="home" size={30} color="#ff8030" />
         <Ionicons name="search" size={30} color="white" />
         <Ionicons name="newspaper" size={30} color="white" />
         {/*Placeholder for skip incon*/}
@@ -251,12 +317,12 @@ const styles = StyleSheet.create({
   },
   categoryRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
     marginBottom: 24,
   },
   categoryItem: {
-    width: "23%",
+    width: 90,
     alignItems: "center",
+    marginRight: 16,
   },
   categoryIconContainer: {
     width: 60,
@@ -277,7 +343,7 @@ const styles = StyleSheet.create({
     height: 170,
     backgroundColor: "#eaf7d8",
     borderRadius: 16,
-    marginTop: 15,
+    marginTop: 0,
     marginBottom: 12,
     justifyContent: "center",
     alignItems: "center",
