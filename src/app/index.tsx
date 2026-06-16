@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import {
   Alert,
   Pressable,
@@ -209,7 +210,12 @@ export default function Index() {
         <Ionicons name="search" size={30} color="white" />
         <Ionicons name="newspaper" size={30} color="white" />
         {/*Placeholder for skip incon*/}
-        <Ionicons name="ellipse-outline" size={30} color="white" />
+        <Ionicons
+          name="ellipse-outline"
+          size={30}
+          color="white"
+          onPress={() => router.push("/myskip")}
+        />
       </View>
     </SafeAreaView>
   );
@@ -218,6 +224,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#2b2b2b",
   },
   header: {
     backgroundColor: "#2b2b2b",
@@ -244,7 +251,12 @@ const styles = StyleSheet.create({
   footer: {
     paddingVertical: 24,
     borderTopWidth: 1,
-    borderTopColor: "#ddd",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingBottom: 50,
+    borderTopColor: "#828282",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
