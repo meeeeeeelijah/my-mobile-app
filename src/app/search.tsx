@@ -155,9 +155,9 @@ const styles = StyleSheet.create({
   },
 
   restaurantBubble: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
+    width: 80,
+    height: 80,
+    borderRadius: 12,
     backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
