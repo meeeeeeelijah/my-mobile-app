@@ -17,12 +17,53 @@ export default function Search() {
           <Text style={styles.searchText}>Search skip</Text>
         </View>
 
+        {/* Featured Restaurants */}
+        <Text style={styles.sectionTitle}>Featured Restaurants</Text>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.restaurantBubble}>
+            <Text style={styles.bubbleText}>Papa John's</Text>
+          </View>
+
+          <View style={styles.restaurantBubble}>
+            <Text style={styles.bubbleText}>Dairy Queen</Text>
+          </View>
+
+          <View style={styles.restaurantBubble}>
+            <Text style={styles.bubbleText}>Denny's</Text>
+          </View>
+
+          <View style={styles.restaurantBubble}>
+            <Text style={styles.bubbleText}>Harvey's</Text>
+          </View>
+        </ScrollView>
+
         <Text style={styles.sectionTitle}>Popular For Lunch</Text>
 
-        <View style={styles.placeholderCard}>
-          <Text style={styles.placeholderText}>
-            Food Categories Coming Soon
-          </Text>
+        <View style={styles.foodGrid}>
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Shawarma</Text>
+          </View>
+
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Barbecue</Text>
+          </View>
+
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Middle Eastern</Text>
+          </View>
+
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Pho</Text>
+          </View>
+
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Sandwiches & Subs</Text>
+          </View>
+
+          <View style={styles.foodCard}>
+            <Text style={styles.foodCardText}>Vietnamese</Text>
+          </View>
         </View>
 
         <Text style={styles.sectionTitle}>Recent Searches</Text>
@@ -59,7 +100,7 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: " #2b2b2b",
+    backgroundColor: "#2b2b2b",
     borderRadius: 20,
     padding: 15,
     marginBottom: 25,
@@ -88,5 +129,46 @@ const styles = StyleSheet.create({
 
   placeholderText: {
     color: "#fff",
+  },
+
+  foodGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    marginBottom: 25,
+  },
+
+  foodCard: {
+    width: "48%",
+    height: 100,
+    backgroundColor: "#2b2b2b",
+    borderRadius: 14,
+    justifyContent: "flex-end",
+    padding: 12,
+    marginBottom: 14,
+  },
+
+  foodCardText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+  restaurantBubble: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 16,
+    marginBottom: 25,
+  },
+
+  bubbleText: {
+    color: "#111",
+    fontSize: 12,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
