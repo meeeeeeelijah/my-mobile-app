@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import {
   Alert,
   Pressable,
@@ -206,7 +207,9 @@ export default function Index() {
       </View>
       <View style={styles.footer}>
         <Ionicons name="home" size={30} color="#ff8030" />
-        <Ionicons name="search" size={30} color="white" />
+        <Pressable onPress={() => router.push("/search")}>
+          <Ionicons name="search" size={30} color="white" />
+        </Pressable>
         <Ionicons name="newspaper" size={30} color="white" />
         {/*Placeholder for skip incon*/}
         <Ionicons name="ellipse-outline" size={30} color="white" />
