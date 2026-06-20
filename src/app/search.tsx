@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -7,7 +8,18 @@ export default function Search() {
     <SafeAreaView style={styles.container}>
       {/*Header*/}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Search</Text>
+        <View style={styles.headerLeft}>
+          <View style={styles.tabs}>
+            <Text style={styles.activeTab}>Delivery</Text>
+            <Text style={styles.tab}>Pickup</Text>
+          </View>
+
+          <Text style={styles.address}>3213 Address Goes Here</Text>
+        </View>
+
+        <View style={styles.profile}>
+          <Ionicons name="person" size={25} color="white" />
+        </View>
       </View>
 
       {/*Body*/}
@@ -72,6 +84,26 @@ export default function Search() {
           <Text style={styles.placeholderText}>No Recent Searches</Text>
         </View>
       </ScrollView>
+
+      <View style={styles.footer}>
+        <Ionicons
+          name="home"
+          size={30}
+          color="white"
+          onPress={() => router.push("/")}
+        />
+
+        <Ionicons name="search" size={30} color="#ff8030" />
+
+        <Ionicons name="newspaper" size={30} color="white" />
+
+        <Ionicons
+          name="ellipse-outline"
+          size={30}
+          color="white"
+          onPress={() => router.push("/myskip")}
+        />
+      </View>
     </SafeAreaView>
   );
 }
@@ -85,6 +117,9 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#2b2b2b",
     padding: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
 
   headerTitle: {
@@ -95,6 +130,7 @@ const styles = StyleSheet.create({
 
   content: {
     padding: 20,
+    paddingBottom: 120,
   },
 
   searchBar: {
@@ -170,5 +206,57 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "bold",
     textAlign: "center",
+  },
+
+  footer: {
+    paddingVertical: 24,
+    borderTopWidth: 1,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingBottom: 50,
+    borderTopColor: "#828282",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#2b2b2b",
+  },
+
+  tabs: {
+    flexDirection: "row",
+  },
+
+  tab: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+  activeTab: {
+    color: "#ff8030",
+    fontSize: 16,
+    fontWeight: "bold",
+    marginRight: 20,
+  },
+
+  address: {
+    paddingTop: 12,
+    color: "#fff",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+
+  profile: {
+    backgroundColor: "#6e6e6e",
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 50,
+    height: 50,
+  },
+
+  headerLeft: {
+    flex: 1,
   },
 });
