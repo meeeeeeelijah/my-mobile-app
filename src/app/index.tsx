@@ -211,13 +211,10 @@ export default function Index() {
           <Ionicons name="search" size={30} color="white" />
         </Pressable>
         <Ionicons name="newspaper" size={30} color="white" />
-        {/*Placeholder for skip incon*/}
-        <Ionicons
-          name="ellipse-outline"
-          size={30}
-          color="white"
-          onPress={() => router.push("/myskip")}
-        />
+        {/*Placeholder for skip icon*/}
+        <Pressable onPress={() => router.push("/myskip")}>
+          <Ionicons name="ellipse-outline" size={30} color="white" />
+        </Pressable>
       </View>
     </SafeAreaView>
   );
