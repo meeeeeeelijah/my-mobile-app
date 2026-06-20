@@ -25,11 +25,11 @@ export default function orders() {
       </View>
 
       {/*Body*/}
-      <ScrollView style={styles.content}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Order History */}
         <Text style={styles.sectionTitle}>Order History</Text>
 
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
           {/* Order Cards */}
           <View style={styles.orderBubble}>
             <View style={styles.orderHeader}>
@@ -147,7 +147,7 @@ export default function orders() {
               </View>
             </View>
           </View>
-        </ScrollView>
+        </View>
       </ScrollView>
 
       <View style={styles.footer}>
@@ -189,12 +189,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  headerTitle: {
-    color: "#fff",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-
   content: {
     padding: 20,
     paddingBottom: 120,
@@ -219,18 +213,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 15,
-  },
-
-  placeholderCard: {
-    backgroundColor: "#222",
-    borderRadius: 15,
-    padding: 30,
-    marginBottom: 25,
-    alignItems: "center",
-  },
-
-  placeholderText: {
-    color: "#fff",
   },
 
   orderBubble: {
@@ -311,7 +293,7 @@ const styles = StyleSheet.create({
   statusText: {
     color: "white",
     fontSize: 12,
-    fontWeight: 300,
+    fontWeight: "300",
   },
 
   price: {
@@ -364,23 +346,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "#2b2b2b",
-  },
-
-  tabs: {
-    flexDirection: "row",
-  },
-
-  tab: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-
-  activeTab: {
-    color: "#ff8030",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginRight: 20,
   },
 
   address: {
