@@ -146,8 +146,10 @@ export default function MySkip() {
           <Pressable onPress={() => router.push("/search")}>
             <Ionicons name="search" size={30} color="white" />
           </Pressable>
-          <Ionicons name="newspaper" size={30} color="white" />
-          {/*Placeholder for skip incon*/}
+
+          <Pressable onPress={() => router.push("/orders")}>
+            <Ionicons name="newspaper" size={30} color="white" />
+          </Pressable>
           <Ionicons name="ellipse-outline" size={30} color="#ff8030" />
         </View>
       </SafeAreaView>

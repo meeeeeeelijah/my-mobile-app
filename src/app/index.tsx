@@ -210,8 +210,9 @@ export default function Index() {
         <Pressable onPress={() => router.push("/search")}>
           <Ionicons name="search" size={30} color="white" />
         </Pressable>
-        <Ionicons name="newspaper" size={30} color="white" />
-        {/*Placeholder for skip icon*/}
+        <Pressable onPress={() => router.push("/orders")}>
+          <Ionicons name="newspaper" size={30} color="white" />
+        </Pressable>
         <Pressable onPress={() => router.push("/myskip")}>
           <Ionicons name="ellipse-outline" size={30} color="white" />
         </Pressable>

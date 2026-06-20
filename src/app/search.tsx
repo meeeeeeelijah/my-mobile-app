@@ -95,7 +95,12 @@ export default function Search() {
 
         <Ionicons name="search" size={30} color="#ff8030" />
 
-        <Ionicons name="newspaper" size={30} color="white" />
+        <Ionicons
+          name="newspaper"
+          size={30}
+          color="white"
+          onPress={() => router.push("/orders")}
+        />
 
         <Ionicons
           name="ellipse-outline"
